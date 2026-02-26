@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Google Image Sizes",
+  "version": "1.1.0",
+  "description": "Adds Megapixel filters to Google Image Tools -> Size",
+  "homepage_url": "https://github.com/your-username/google-image-sizes",
+  
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "google-images-sizes@googleimagesizes.local",
+      "strict_min_version": "109.0"
+    }
+  },
+
+  "icons": {
+    "512": "icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": [
+        "https://www.google.com/search?*"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "permissions": [],
+  "host_permissions": [
+    "https://www.google.com/search?*"
+  ]
+}
