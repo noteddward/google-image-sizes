@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Google Image Sizes",
   "version": "1.0.1",
   "description": "Adds Megapixel filters to Google Image Tools -> Size.",
@@ -8,10 +8,8 @@
     "512": "icon.png"
   },
   "permissions": [
-    "storage"
-  ],
-  "host_permissions": [
-    "https://www.google.com/search?*"
+    "storage",
+    "https://www.google.com/*"
   ],
   "content_scripts": [
     {
@@ -23,5 +21,16 @@
       ],
       "run_at": "document_idle"
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "google-images-sizes@googleimagesizes.local",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  }
 }
